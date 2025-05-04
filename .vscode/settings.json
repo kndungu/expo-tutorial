@@ -2,10 +2,53 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit",
-    "source.sortMembers": "explicit"
+    "source.sortMembers": "explicit",
+    "source.fixAll.eslint": "always"
   },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "files.insertFinalNewline": true,
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+    {
+      "regex": "^react(-native)?$",
+      "orderLevel": 1,
+      "description": "React and React Native imports first"
+    },
+    {
+      "regex": "^\\w",
+      "orderLevel": 2,
+      "description": "Third-party modules"
+    },
+    {
+      "regex": "^@?\\w",
+      "orderLevel": 3,
+      "description": "Third-party modules"
+    },
+    {
+      "regex": "^src/",
+      "orderLevel": 3,
+      "description": "Absolute imports from src"
+    },
+    {
+      "regex": "^\\.\\./",
+      "orderLevel": 4,
+      "description": "Parent relative imports"
+    },
+    {
+      "regex": "^\\./",
+      "orderLevel": 5,
+      "description": "Same-folder relative imports"
+    }
+  ],
+  "prettier.jsxSingleQuote": false,
+  "prettier.singleQuote": true,
   "prettier.tabWidth": 2,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
